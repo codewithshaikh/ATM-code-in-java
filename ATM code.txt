@@ -1,0 +1,142 @@
+package testMy;
+
+import java.util.Scanner;
+
+public class test1 {
+
+	public static void main(String[] args) {
+	
+		Scanner sc=new Scanner(System.in);
+		
+		int pin=5454,p,np,cp ,b=10000, n,w=0,cw,r,d;
+	
+		String lan ;
+		
+		System.out.println("Enter your Language");
+		lan = sc.next();
+		
+		while(true) {
+			
+		System.out.println("Please Enter your 4 digit pin");
+		p = sc.nextInt();
+		
+		
+		if (p != pin) {
+			System.out.println("Invalid pin");
+		}else {
+			System.out.println("Welcome to Bank");
+			
+			System.out.println( );
+			
+			System.out.println("Choose 1 for Check Balance");
+		
+			System.out.println("Choose 2 for Cash Withdrawal");
+			
+			System.out.println("Choose 3 for Change ATM pin No. ");
+		
+			System.out.println("Choose 4 for Deposit");
+		
+			System.out.println("Choose 5 for Exit");
+			
+			n = sc.nextInt();
+			
+			switch(n)
+			{
+			case 1:
+				System.out.println("Your Balance is "+b);
+				System.out.println(" ");
+				break;
+				
+			case 2:
+				System.out.println("Enter Your Amount");
+				w = sc.nextInt();
+				
+				if (b >= w)
+				{
+				
+				System.out.println("Choose for 2000");
+				System.out.println("Choose for 500");
+				System.out.println("Choose for 200");
+				System.out.println("Choose for 100");
+			
+				cw = sc.nextInt();
+				switch(cw)
+				{
+				case 2000:
+					r=w/2000;
+					System.out.println("2000 * "+ r +" = "+ w );
+				break;
+				
+				case 500:
+					r=w/500;
+					System.out.println("500 * "+ r +" = "+ w );
+				break;
+				
+				case 200:
+					r=w/200;
+					System.out.println("200 * "+ r +" = "+ w );
+				break;
+				
+				case 100:
+					r=w/100;
+					System.out.println("100 * "+ r +" = "+ w );
+				break;
+				}
+						b= b-w;
+						System.out.println("Please Collect your cash");
+				}else {
+					System.out.println("Insufficient Money");
+				}
+				System.out.println(" ");
+				break;
+				
+			case 3:
+				System.out.println("Enter Your old pin");
+				p= sc.nextInt();
+				if(p != pin) {
+					System.out.println("Your password is Invalid");
+				}else {
+					System.out.println("Enter new pin");
+					np = sc.nextInt();
+					
+					System.out.println("Enter Confome pin");
+					cp = sc.nextInt();
+					
+					if(np != cp) {
+						System.out.println("Your pin not Mach");
+					}
+					
+//					if((np <= 4 && np > 4) && (cp <= 4 && cp >4))
+//					{
+//						System.out.println("Only 4 digit pin number ");
+//					}
+					
+					else {
+						pin=np=cp;
+						System.out.println("Succssfully Change Your pin");
+					}
+				}
+			break;
+				
+			case 4:
+				System.out.println("Deposit Your Amount");
+				d = sc.nextInt();
+				b= b+d;
+				System.out.println("Your Money Successfully Deposit");
+				System.out.println(" ");
+				break;
+				
+			case 5:
+				System.exit(0);
+				
+			}// switch end
+			
+		}// if pin end
+			
+	}// while loop end
+		
+	
+		
+	}
+
+}
